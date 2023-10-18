@@ -61,41 +61,46 @@ const ChatBot = (props) => {
         // console.log("object")
     }
     return (<>
-        <div className='container-fluid bg-dark shadow-lg rounded-5 border-0 p-md-3 p-3 mt-md-3 mt-5'>
-            <div className="mb-3">
-                <div className="d-flex justify-content-between bg-light shadow-sm border-1 rounded-4 ">
-                    <label htmlFor="response " className="form-label text-dark px-3 fw-bold" >Response</label>
-                    <button type='button' className='text-dark border-0 px-3 bg-light rounded-4' onClick={copy} ><i className="fa-solid fa-copy"></i></button>
-                </div>
-                <textarea
-                    className="form-control bg-dark text-light rounded-top-0 border-0 mt-2 "
-                    style={{ " resize": "none", "overflowY": " auto" , 'outline':'none'}}
-                    id="response"
-                    name="response"
-                    rows="14"
-                    value={responseValue}
-                    readOnly
-                ></textarea>
-            </div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="prompt mt-3 mb-3"></label>
-                <div className="input-group">
-                    <textarea
-                        type="text"
-                        className="form-control fixed-bottom rounded-5 px-4 text-light "
-                        id="prompt"
-                        style={{"color":'white', "backgroundColor":'black'}}
-                        placeholder="Enter your desired prompt here..."
-                        value={inputValue}
-                        onChange={(e) => setInputValue(e.target.value)}
-                        required
-                        rows={2}
-                    ></textarea>
-                    <button type="submit" className='border-0 rounded-5'><i className="fa-solid fa-paper-plane text-primary px-3 border-0"></i></button>
-                </div>
-            </form>
-
+<div className='container-fluid bg-gradient p-4 rounded-lg shadow-lg'>
+    <div className="mb-4">
+        <div className="d-flex justify-content-between bg-primary text-light p-2 rounded-lg">
+            <label htmlFor="response" className="form-label fw-bold">Response</label>
+            <button type='button' className='btn btn-secondary rounded-circle' onClick={copy}>
+                <i className="fa-solid fa-copy"></i>
+            </button>
         </div>
+        <textarea
+            className="form-control bg-dark text-light border-0 mt-2 rounded-lg"
+            style={{ "resize": "none", "overflowY": "auto", 'outline': 'none' }}
+            id="response"
+            name="response"
+            rows="14"
+            value={responseValue}
+            readOnly
+        ></textarea>
+    </div>
+    <form onSubmit={handleSubmit}>
+        <label htmlFor="prompt" className="form-label mt-4 mb-3"></label>
+        <div className="input-group">
+            <textarea
+                type="text"
+                className="form-control rounded-lg px-4 text-light"
+                id="prompt"
+                style={{ "color": 'white', "background": 'black' }}
+                placeholder="Enter your desired prompt here..."
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                required
+                rows={2}
+            ></textarea>
+            <button type="submit" className='btn btn-primary '>
+                <i className="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </form>
+</div>
+
+
         </>
     );
 }
